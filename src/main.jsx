@@ -8,6 +8,7 @@ import { Cadastro } from './pages/Cadastro.jsx';
 import { NotFound } from './pages/NotFound.jsx';
 import './index.css'
 import { Home } from './pages/Home.jsx';
+import { Contato } from './pages/Contato.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home />
+  },
+  {
+    path: '/contato',
+    element: <Contato />
   },
   {
     path: '/cadastro',
