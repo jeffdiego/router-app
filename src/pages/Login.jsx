@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import './Login.css'
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ export const Login = () => {
                     <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
-                <div className="form-check text-start my-3">♦
+                <div className="form-check text-start my-3">
                     <input className="form-check-input" type="checkbox" value="remember-me" id="checkDefault" />
                     <label className="form-check-label" htmlFor="checkDefault">
                         Remember me
