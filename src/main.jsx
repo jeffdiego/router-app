@@ -9,24 +9,33 @@ import { NotFound } from './pages/NotFound.jsx';
 import './index.css'
 import { Home } from './pages/Home.jsx';
 import { Contato } from './pages/Contato.jsx';
+import { Layout } from './components/Layout.jsx';
 
 const router = createBrowserRouter([
+  /* O único path que vai ficar de fora do layout (navbar + footer) */
   {
     path: '/',
     element: <Login />
   },
   {
-    path: '/home',
-    element: <Home />
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/home',
+        element: <Home />
+      },
+      {
+        path: '/contato',
+        element: <Contato />
+      },
+      {
+        path: '/cadastro',
+        element: <Cadastro />
+      },
+    ]
   },
-  {
-    path: '/contato',
-    element: <Contato />
-  },
-  {
-    path: '/cadastro',
-    element: <Cadastro />
-  },
+  /* Página não encontrada - 404 */
   {
     path: '*',
     element: <NotFound />

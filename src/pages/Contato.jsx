@@ -5,9 +5,7 @@ import { Footer } from '../components/Footer'
 export const Contato = () => {
   return (
     <>
-    <Navbar />
     <div>Contato</div>
-    <Footer />
     </>
   )
 }
