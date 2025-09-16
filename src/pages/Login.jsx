@@ -22,7 +22,6 @@ export const Login = () => {
         } else {
             alert('Usuário ou senha incorreto!')
         }
-
     }
 
     // Handle change genérico
