@@ -14,6 +14,7 @@ export const Login = () => {
     const login = e => {
         /* evita recarregar a página */
         e.preventDefault();
+        console.log('dados', formData)
         const { email, password } = formData;
         if (email === 'angelo@teste.com' && password === '123') {
             alert('Autenticação bem sucedida!')
@@ -33,12 +34,21 @@ export const Login = () => {
         }));
     };
 
-    const handleEmail = (e) => {
-        console.log(e.target.value)
-    }
+    // const handleEmail = (e) => {
+    //     console.log(e.target.id, e.target.value)
 
-    const handleSenha = (e) => {
-        console.log(e)
+    //     setFormData({
+    //         email: e.target.value
+    //     })
+    // }
+
+    const handleInput = (e) => {
+        console.log(e.target.id, e.target.value)
+
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        })
     }
 
     return (
@@ -53,7 +63,7 @@ export const Login = () => {
                     type='email'
                     placeholder="name@example.com"
                     value={formData.email}
-                    onChange={handleEmail}
+                    onChange={handleInput}
                 />
 
                 <InputField
@@ -62,7 +72,7 @@ export const Login = () => {
                     type='password'
                     placeholder="senha"
                     value={formData.senha}
-                    onChange={handleSenha}
+                    onChange={handleInput}
 
 
                 />
@@ -74,7 +84,7 @@ export const Login = () => {
                         Remember me
                     </label>
                 </div>
-                <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+                <button className="btn btn-success w-100 py-2" type="submit">Entrar</button>
                 <p className="mt-5 mb-3 text-body-secondary">© 2017–2025</p>
             </form>
         </main>
